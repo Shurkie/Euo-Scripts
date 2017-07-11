@@ -1,3 +1,8 @@
+//Bomb - Anouncer v1.0
+//Arthor : Shurkie 
+//This script Detects your CHAR's name in #journal, then Notify your Bomb counts with voice.
+
+
 SET #LPC 200
 set %name #charname
 set %pos 1
