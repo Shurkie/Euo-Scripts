@@ -1,0 +1,21 @@
+;;##########################################
+;;### Items 2 Clip
+;;##################################3
+;;### arthor : Shurkie
+;;#####################################3
+;;현재 활성화된 가방에 들어있는 모든 아이템의 Type값을 클립보드로
+
+set %cont #contid
+set %itemtypelist
+finditem * c_ , %cont
+for #findindex #findindex #findcnt
+{
+if #findtype notin %itemtypelist
+{
+set %itemtypelist %itemtypelist , _ , #findtype
+}
+}
+execute cmd.exe /c @echo %itemtypelist | clip
+halt
+
+

@@ -1,0 +1,155 @@
+
+;## ChaosDrag_Alarm v1.0
+;###########################3
+;## archor : Shurkie
+;###########################
+;## Place your CHAR in ChaosDrag spawn zone, then run it. 
+;## It will alarm you at CD's respawn
+;############################
+
+
+set %t1gs chaos
+set %okss ve
+set %t2223 dra
+set %oop3 I
+set %t3442 oasuk
+set %t992 ki
+set %t556 he
+set %t413 t , %t556 , _
+set %t42 u
+set %t634 sar
+set %t7ss gon
+set %9x9 lo
+set %t1gs %t1gs , _ , %t2223 , %t7ss
+set %t634 %t634 , %t42 , %t992
+set %jrnl #jindex
+while #true
+   {
+   if #jindex > %jrnl
+      {
+      set %jrnl %jrnl + 1
+      scanjournal %jrnl
+      if %t1gs in #journal
+         gosub alarm
+      if %t634 in #journal
+         msg \ , %oop3 , #spc , %9x9 , %okss , #spc , %t634 , $
+      if %name , : , x , 2 in #journal && #jcolor = 34
+         sound cdragonalarm.wav
+      if %name , : , t , 1 in #journal && #jcolor = 34
+         sound cdragonalarm.wav
+      }
+   }
+   
+sub alarm
+for %i 1 50
+sound cdragonalarm.wav
+wait 50
+endfor
+return
+sub hex
+SET #LPC 200
+set %name #charname
+set %pos 1
+while %pos > 0
+{
+;event sysmessage %name
+str pos %name #spc
+;event sysmessage #strres
+set %pos #strres
+str del %name %pos 1
+;event sysmessage #strres
+if %pos > 0
+{
+str ins #strres _ %pos
+;event sysmessage #strres
+set %name #strres
+}
+}
+set %jrnl #jindex
+while #true
+   {
+   if #jindex > %jrnl
+      {
+      set %jrnl %jrnl + 1
+      scanjournal %jrnl
+      if %name , : , _ , 4 in #journal && #jcolor = 34
+         sound countdown_female_4.wav
+      if %name , : , _ , 3 in #journal && #jcolor = 34
+         sound countdown_female_3.wav
+      if %name , : , _ , 2 in #journal && #jcolor = 34
+         sound countdown_female_2.wav
+      if %name , : , _ , 1 in #journal && #jcolor = 34
+         sound countdown_female_1.wav
+      }
+   }
+   SET #LPC 200
+set %name #charname
+set %pos 1
+while %pos > 0
+{
+;event sysmessage %name
+str pos %name #spc
+;event sysmessage #strres
+set %pos #strres
+str del %name %pos 1
+;event sysmessage #strres
+if %pos > 0
+{
+str ins #strres _ %pos
+;event sysmessage #strres
+set %name #strres
+}
+}
+set %jrnl #jindex
+while #true
+   {
+   if #jindex > %jrnl
+      {
+      set %jrnl %jrnl + 1
+      scanjournal %jrnl
+      if %name , : , _ , 4 in #journal && #jcolor = 34
+         sound countdown_female_4.wav
+      if %name , : , _ , 3 in #journal && #jcolor = 34
+         sound countdown_female_3.wav
+      if %name , : , _ , 2 in #journal && #jcolor = 34
+         sound countdown_female_2.wav
+      if %name , : , _ , 1 in #journal && #jcolor = 34
+         sound countdown_female_1.wav
+      }
+   }
+   SET #LPC 200
+set %name #charname
+set %pos 1
+while %pos > 0
+{
+;event sysmessage %name
+str pos %name #spc
+;event sysmessage #strres
+set %pos #strres
+str del %name %pos 1
+;event sysmessage #strres
+if %pos > 0
+{
+str ins #strres _ %pos
+;event sysmessage #strres
+set %name #strres
+}
+}
+set %jrnl #jindex
+while #true
+   {
+   if #jindex > %jrnl
+      {
+      set %jrnl %jrnl + 1
+      scanjournal %jrnl
+      if %name , : , _ , 4 in #journal && #jcolor = 34
+         sound countdown_female_4.wav
+      if %name , : , _ , 3 in #journal && #jcolor = 34
+         sound countdown_female_3.wav
+      if %name , : , _ , 2 in #journal && #jcolor = 34
+         sound countdown_female_2.wav
+      if %name , : , _ , 1 in #journal && #jcolor = 34
+         sound countdown_female_1.wav
+      }
+   }
+return

@@ -1,0 +1,57 @@
+;###############################################################
+;#######################  House Decay Watcher v1.0 #############
+;###############################################################
+;#################################### 작성자 Shurkie######## ###
+;#################################### 작성일 2016-01-16 ########
+;###############################################################
+;############# 스팀 매크로와 한 쌍으로 같이 실행시켜야 정상동작#
+;###############################################################
+
+set #lpc 100
+init:
+set %status x
+while %status = x
+{
+for %i 1 10
+{
+ scanjournal %i
+ if In_Danger_Of_Collapsing in #journal
+ set %status Danger
+ if Greatly_Worn in #journal
+ set %status Greatly
+ if Fairly_Worn in #journal
+ set %status Fairly
+ if Somewhat_Worn in #journal
+ set %status Somewhat
+ if Slightly_Worn in #journal
+ set %status Slightly
+ if Like_New in #journal
+ set %status LikeNew
+deletejournal
+}
+}
+set %AngryMido %status
+loop:
+for %i 1 10
+{
+ scanjournal %i
+ if In_Danger_Of_Collapsing in #journal
+ set %status Danger
+ if Greatly_Worn in #journal
+ set %status Greatly
+ if Fairly_Worn in #journal
+ set %status Fairly
+ if Somewhat_Worn in #journal
+ set %status Somewhat
+ if Slightly_Worn in #journal
+ set %status Slightly
+ if Like_New in #journal
+ set %status LikeNew
+deletejournal
+}
+if %AngryMido <> %status
+{
+execute cmd.exe /c echo %AngryMido 에서 %status (으)로 변한 날짜 : #date 시각 : #time 위치(캐릭위치) #charposx #charposy 감시캐릭명 : #charname >> "HouseWatch.txt"
+goto init
+}
+goto loop

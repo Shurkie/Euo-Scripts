@@ -1,0 +1,29 @@
+;;################3
+;;## Squad Control
+;;################
+;;### arthor:shurkie
+;;################
+;;## Make your CHARS to a sqard. (on multi-client)
+;;## Run this script on your leader(master) client.
+;;## 여러 개의 클라이언트를 돌릴 때, 다른 클라이언트를 봇으로 (Slave) 만들 수 있습니다.
+;;## 직접 조종할 클라이언트에서 이 스크립트를 돌리면, 봇 클라이언트에 리더의 위치를 
+;;## 계속 보내줍니다. 
+;;################
+
+
+set #lpc 50
+namespace global Squard1
+set !masterx 0
+set !mastery 0
+set !masterz 0
+set !masterdir 0
+start:
+if !masterx <> #charposx
+set !Masterx #charposx
+if !mastery <> #charposy
+set !Mastery #charposy
+if !masterz <> #charposz
+set !masterz #charposz
+if !masterdir <> #chardir
+set !masterdir #chardir
+goto start

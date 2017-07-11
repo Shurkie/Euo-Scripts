@@ -1,0 +1,47 @@
+;######################
+;### Chaser (Slave) v1.0
+;######################
+;### When activated, It chase Master Script
+;######################
+;###
+
+
+;%1 Targetx %2 Targety %3 Targetz %4 Targetdir
+set %Chasedist 1
+if %4 = 1
+  {
+  set %1 %1 + %chasedist
+  set %2 %2 - %chasedist
+  }
+if %4 = 2
+  {
+  set %1 %1 + %chasedist
+  }
+if %4 = 3
+  {
+  set %1 %1 + %chasedist
+  set %2 %2 + %chasedist
+  }
+if %4 = 4
+  {
+  set %2 %2 + %chasedist
+  }
+if %4 = 5
+  {
+  set %1 %1 - %chasedist
+  set %2 %2 + %chasedist
+  }
+if %4 = 6
+  {
+  set %1 %1 - %chasedist
+  }
+if %4 = 7
+  {
+  set %1 %1 - %chasedist
+  set %2 %2 - %chasedist
+  }
+if %4 = 0
+  {
+  set %2 %2 - %chasedist
+  }
+event pathfind %1 %2 %3
