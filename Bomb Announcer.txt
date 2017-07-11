@@ -1,0 +1,37 @@
+SET #LPC 200
+set %name #charname
+set %pos 1
+while %pos > 0
+{
+;event sysmessage %name
+str pos %name #spc
+;event sysmessage #strres
+set %pos #strres
+str del %name %pos 1
+;event sysmessage #strres
+if %pos > 0
+{
+str ins #strres _ %pos
+;event sysmessage #strres
+set %name #strres
+}
+}
+set %jrnl #jindex
+while #true
+   {
+   if #jindex > %jrnl
+      {
+      set %jrnl %jrnl + 1
+      scanjournal %jrnl
+      if %name , : , _ , 4 in #journal && #jcolor = 34
+         sound countdown_female_4.wav
+      if %name , : , _ , 3 in #journal && #jcolor = 34
+         sound countdown_female_3.wav
+      if %name , : , _ , 2 in #journal && #jcolor = 34
+         sound countdown_female_2.wav
+      if %name , : , _ , 1 in #journal && #jcolor = 34
+         sound countdown_female_1.wav
+      if ***target_stunned in #journal
+         sound stunned.wav
+      }
+   }
